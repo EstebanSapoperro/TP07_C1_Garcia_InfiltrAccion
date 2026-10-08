@@ -46,10 +46,18 @@ public class PlayerMovement : MonoBehaviour
             bufferTimer -= Time.deltaTime;
         }
 
-        if (Input.GetKey(KeyCode.D)) goingRight = true;
+        if (Input.GetKey(KeyCode.D)) 
+        { 
+            goingRight = true; 
+
+        }
         else goingRight = false;
 
-        if (Input.GetKey(KeyCode.A)) goingLeft = true;
+        if (Input.GetKey(KeyCode.A)) 
+        { 
+            goingLeft = true; 
+        
+        }
         else goingLeft = false;
 
 

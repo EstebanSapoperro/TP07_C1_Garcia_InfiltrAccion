@@ -25,5 +25,7 @@ public class BulletMovement : MonoBehaviour
     {
         speed = data.speed;
         rb.linearVelocityX = direction * speed;
+        Vector3 directio = new Vector3(direction,0,0);
+        transform.up = directio;
     } 
 }
