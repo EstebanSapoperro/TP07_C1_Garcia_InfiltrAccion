@@ -6,14 +6,11 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private LayerMask floorLayer;
 
-    [SerializeField] float coyoteTime = 0.1f;
-    [SerializeField] float bufferTime = 0.5f;
+    [SerializeField] private float coyoteTime = 0.1f;
+    [SerializeField] private float bufferTime = 0.5f;
 
-
-    float coyoteTimer = 0;
-    float bufferTimer = 0;
-
-
+    private float coyoteTimer = 0;
+    private float bufferTimer = 0;
 
     private bool isPressingUp = false;
     private bool isPressingDown = false;
