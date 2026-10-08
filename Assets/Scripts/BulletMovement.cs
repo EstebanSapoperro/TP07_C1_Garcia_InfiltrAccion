@@ -6,10 +6,12 @@ public class BulletMovement : MonoBehaviour
     private float lifeTime;
     private float lifeTimer;
     private float speed;
+    private float damage;
     [SerializeField] private Rigidbody2D rb;
 
     private void Start()
     {
+        damage = data.damage;
         lifeTime = data.lifeTime;
         speed = data.speed;
         lifeTimer = lifeTime;
@@ -37,6 +39,8 @@ public class BulletMovement : MonoBehaviour
         }
         if (other.gameObject.layer == LayerMask.NameToLayer("Enemigos"))
         {
+            HealthComponent enemyLife = other.GetComponentInChildren<HealthComponent>();
+            enemyLife.DoDamage(damage);
             Destroy(gameObject);
         }
 

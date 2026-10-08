@@ -6,4 +6,6 @@ public class BulletDataSo : ScriptableObject
     [SerializeField] public float lifeTime = 2;
     [SerializeField] public float speed = 1f;
 
+    [SerializeField] public float damage = 15;
+
 }
