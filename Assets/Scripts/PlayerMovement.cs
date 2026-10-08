@@ -1,13 +1,8 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public bool shieldActive = false;
-
-    [SerializeField] private LayerMask floorLayer;
-
-    [SerializeField] private float coyoteTime = 0.1f;
-    [SerializeField] private float bufferTime = 0.5f;
 
     private float coyoteTimer = 0;
     private float bufferTimer = 0;
@@ -18,15 +13,28 @@ public class PlayerMovement : MonoBehaviour
     private bool inFloor = false;
     private bool goingRight = false;
     private bool goingLeft = false;
-    [SerializeField] private float speed;
-    [SerializeField] private float jumpForce;
-    [SerializeField] private float originalGravityScale;
-    [SerializeField] private float jumpGravityScale;
-    [SerializeField] private float rayCastLong;
+    private LayerMask floorLayer;
+    private float coyoteTime;
+    private float bufferTime;
+    private float speed;
+    private float jumpForce;
+    private float originalGravityScale;
+    private float jumpGravityScale;
+    private float rayCastLong;
     [SerializeField]  public Rigidbody2D rb;
+    [SerializeField] PlayerSo data;
 
     private void Start()
     {
+        floorLayer = data.floorLayer;
+        coyoteTime = data.coyoteTime;
+        bufferTime = data.bufferTime;
+        speed = data.speed;
+        jumpForce = data.jumpForce;
+        originalGravityScale = data.originalGravityScale;
+        jumpGravityScale = data.jumpGravityScale;
+        rayCastLong = data.rayCastLong;
+
         rb.gravityScale = originalGravityScale;
     }
 
