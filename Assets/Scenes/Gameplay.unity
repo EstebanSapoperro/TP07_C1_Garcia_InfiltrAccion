@@ -514,6 +514,8 @@ MonoBehaviour:
   floorLayer:
     serializedVersion: 2
     m_Bits: 64
+  coyoteTime: 0.15
+  bufferTime: 0.35
   speed: 5
   jumpForce: 7
   originalGravityScale: 2.5
