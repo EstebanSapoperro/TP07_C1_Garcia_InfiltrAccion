@@ -514,7 +514,7 @@ MonoBehaviour:
   floorLayer:
     serializedVersion: 2
     m_Bits: 64
-  speed: 0
+  speed: 5
   jumpForce: 7
   originalGravityScale: 2.5
   jumpGravityScale: 1
@@ -599,19 +599,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7576111188735368717, guid: 648fb038ac68d01489c92675b919177a, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.4303671
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 7576111188735368717, guid: 648fb038ac68d01489c92675b919177a, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.2149699
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 7576111188735368717, guid: 648fb038ac68d01489c92675b919177a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.23
+      value: -0.07
       objectReference: {fileID: 0}
     - target: {fileID: 7576111188735368717, guid: 648fb038ac68d01489c92675b919177a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.1081
+      value: -3.48
       objectReference: {fileID: 0}
     - target: {fileID: 7576111188735368717, guid: 648fb038ac68d01489c92675b919177a, type: 3}
       propertyPath: m_LocalPosition.z
