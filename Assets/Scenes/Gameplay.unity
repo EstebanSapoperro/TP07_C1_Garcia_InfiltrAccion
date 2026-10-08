@@ -354,7 +354,7 @@ GameObject:
   - component: {fileID: 763556975}
   - component: {fileID: 763556974}
   m_Layer: 7
-  m_Name: Capsule
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -514,6 +514,7 @@ MonoBehaviour:
   floorLayer:
     serializedVersion: 2
     m_Bits: 64
+  speed: 0
   jumpForce: 7
   originalGravityScale: 2.5
   jumpGravityScale: 1

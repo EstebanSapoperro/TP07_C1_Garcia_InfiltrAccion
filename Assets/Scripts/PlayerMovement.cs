@@ -10,6 +10,9 @@ public class PlayerMovement : MonoBehaviour
     private bool isPressingDown = false;
     private bool isTappetUp = false;
     private bool inFloor = false;
+    private bool goingRight = false;
+    private bool goingLeft = false;
+    [SerializeField] private float speed;
     [SerializeField] private float jumpForce;
     [SerializeField] private float originalGravityScale;
     [SerializeField] private float jumpGravityScale;
@@ -26,7 +29,6 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.W))
         {
-            Debug.Log("se apreto salto");
             isPressingUp = true;
             isTappetUp = true;
         }
@@ -35,6 +37,13 @@ public class PlayerMovement : MonoBehaviour
             isPressingUp = false;
             isTappetUp = false;
         }
+
+        if (Input.GetKey(KeyCode.D)) goingRight = true;
+        else goingRight = false;
+
+        if (Input.GetKey(KeyCode.A)) goingLeft = true;
+        else goingLeft = false;
+
 
         RaycastHit2D hit = Physics2D.Raycast(transform.localPosition, Vector2.down, rayCastLong, floorLayer);
         inFloor = hit.collider != null;
@@ -53,9 +62,13 @@ public class PlayerMovement : MonoBehaviour
 
         if ((isTappetUp) && (inFloor))
         {
-            Debug.Log("salto");
             rb.linearVelocityY = jumpForce;
         }
+
+        if(goingRight) rb.linearVelocityX = speed;
+
+        else if (goingLeft) rb.linearVelocityX = -speed;
+        else rb.linearVelocityX = 0;
 
     }
 
