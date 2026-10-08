@@ -27,5 +27,18 @@ public class BulletMovement : MonoBehaviour
         rb.linearVelocityX = direction * speed;
         Vector3 directio = new Vector3(direction,0,0);
         transform.up = directio;
-    } 
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Solidos")) 
+        {
+            Destroy(gameObject);
+        }
+        if (other.gameObject.layer == LayerMask.NameToLayer("Enemigos"))
+        {
+            Destroy(gameObject);
+        }
+
+    }
 }

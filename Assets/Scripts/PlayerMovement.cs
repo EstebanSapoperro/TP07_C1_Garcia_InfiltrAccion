@@ -48,15 +48,15 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKey(KeyCode.D)) 
         { 
-            goingRight = true; 
-
+            goingRight = true;
+            transform.right = new Vector3(0,0,0);
         }
         else goingRight = false;
 
         if (Input.GetKey(KeyCode.A)) 
         { 
-            goingLeft = true; 
-        
+            goingLeft = true;
+            transform.right = new Vector3(-180, 0, 0);
         }
         else goingLeft = false;
 
