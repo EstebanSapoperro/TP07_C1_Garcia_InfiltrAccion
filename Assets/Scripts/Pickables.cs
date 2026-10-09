@@ -10,7 +10,6 @@ public class Pickables : MonoBehaviour
     void Start()
     {
         rb.AddForce(new Vector2(Random.Range(-jumpx, jumpx), jump));
-        Debug.Log("salio pa cualquier lugar");
         Destroy(gameObject, 3);
     }
     private void OnCollisionEnter2D(Collision2D other)
