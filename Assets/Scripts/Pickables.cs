@@ -12,7 +12,7 @@ public class Pickables : MonoBehaviour
         rb.AddForce(new Vector2(Random.Range(-jumpx, jumpx), jump));
         Destroy(gameObject, 3);
     }
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
         {

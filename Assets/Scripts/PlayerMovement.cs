@@ -1,4 +1,4 @@
-using Unity.VisualScripting;
+
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -8,7 +8,6 @@ public class PlayerMovement : MonoBehaviour
     private float bufferTimer = 0;
 
     private bool isPressingUp = false;
-    private bool isPressingDown = false;
     private bool isTappetUp = false;
     private bool inFloor = false;
     private bool goingRight = false;
