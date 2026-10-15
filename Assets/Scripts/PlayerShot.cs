@@ -5,13 +5,18 @@ public class PlayerShot : MonoBehaviour
     [SerializeField] private BulletMovement bulletPrefab;
     [SerializeField] private Transform body;
     [SerializeField] private Transform shotPoint;
+    [SerializeField] private float shotCoolDown = 0.7f;
+    private float shotTimer;
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        shotTimer -= Time.deltaTime;
+
+        if (Input.GetMouseButton(0) && shotTimer < 0)
         {
             BulletMovement bullet = Instantiate(bulletPrefab, shotPoint.position, Quaternion.identity);
             bullet.Shot(Mathf.Sign(body.transform.right.x));
+            shotTimer = shotCoolDown;
         }
     }
 

@@ -21,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
     private float jumpGravityScale;
     private float rayCastLong;
     [SerializeField]  public Rigidbody2D rb;
+    [SerializeField] Transform body;
     [SerializeField] PlayerSo data;
 
     private void Start()
@@ -56,14 +57,14 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.D)) 
         { 
             goingRight = true;
-            transform.right = new Vector3(0,0,0);
+            body.transform.right = new Vector3(0,0,0);
         }
         else goingRight = false;
 
         if (Input.GetKey(KeyCode.A)) 
         { 
             goingLeft = true;
-            transform.right = new Vector3(-180, 0, 0);
+            body.transform.right = new Vector3(-180, 0, 0);
         }
         else goingLeft = false;
 
