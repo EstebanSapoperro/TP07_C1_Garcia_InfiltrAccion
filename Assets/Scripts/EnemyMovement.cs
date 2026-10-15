@@ -5,49 +5,31 @@ using UnityEngine.UIElements;
 public class EnemyMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
-    [SerializeField] float volocityx = 1f;
-    [SerializeField] Transform body;
+    private float velocityX = 1f;
+    [SerializeField] private Transform body;
+    [SerializeField] private EnemyDataSo data;
     public bool inFloor = true;
 
     private void Start()
     {
+        velocityX = data.velocityX;
         rb = GetComponent<Rigidbody2D>();
-        rb.linearVelocityX = Mathf.Abs(volocityx *2);
+        rb.linearVelocityX = Mathf.Abs(velocityX *2);
     }
+
 
     public void ChangeDirection() 
     {
-        Debug.Log("no esta en el suelo");
-
         Vector3 rotacion = body.transform.eulerAngles;
-
-        //if (transform.rotation.y == -180)
-        //{
-        //    rb.linearVelocityX = volocityx;
-        //    Debug.Log("cambio de direccion a la derecha");
-        //    transform.right = new Vector3(0, 0, 0);
-        //}
-
-        //if (transform.rotation.y == 0)
-        //{
-        //    Debug.Log("cambio de direccion a la izquierda");
-        //    transform.right = new Vector3(-180, 0, 0);
-        //}
-
         if (Mathf.Approximately(rotacion.y, 180f))
         {
-            rb.linearVelocityX = Mathf.Abs(volocityx);
-            Debug.Log("Cambio de dirección a la derecha");
-
+            rb.linearVelocityX = Mathf.Abs(velocityX);
             body.transform.rotation = Quaternion.Euler(0, 0, 0);
         }
         else
         {
-            rb.linearVelocityX = -Mathf.Abs(volocityx);
-            Debug.Log("Cambio de dirección a la izquierda");
-
+            rb.linearVelocityX = -Mathf.Abs(velocityX);
             body.transform.rotation = Quaternion.Euler(0, 180, 0);
         }
-
     }
 }

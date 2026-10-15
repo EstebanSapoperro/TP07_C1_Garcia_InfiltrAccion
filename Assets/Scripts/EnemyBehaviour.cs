@@ -3,10 +3,6 @@ using UnityEngine;
 public class EnemyBehaviour : MonoBehaviour
 {
     [SerializeField] private Pickables pickables;
-    private void Start()
-    {
-        
-    }
 
     private void OnDestroy()
     {
