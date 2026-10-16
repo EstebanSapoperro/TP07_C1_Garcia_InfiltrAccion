@@ -3,4 +3,5 @@ using UnityEngine;
 public class EnemyDataSo : ScriptableObject
 {
     [SerializeField] public float velocityX = 1;
+    [SerializeField] public float enemyHealth = 100;
 }

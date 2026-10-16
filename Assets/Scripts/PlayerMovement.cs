@@ -1,9 +1,9 @@
-
+using System;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-
+    public static event Action OnUpdateHealth;
     private float coyoteTimer = 0;
     private float bufferTimer = 0;
 
@@ -12,6 +12,9 @@ public class PlayerMovement : MonoBehaviour
     private bool inFloor = false;
     private bool goingRight = false;
     private bool goingLeft = false;
+    private float invulneravilityTime;
+    private float invulneravilityCounter;
+    private float contactDamage;
     private LayerMask floorLayer;
     private float coyoteTime;
     private float bufferTime;
@@ -26,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
+        contactDamage = data.contactDamage;
         floorLayer = data.floorLayer;
         coyoteTime = data.coyoteTime;
         bufferTime = data.bufferTime;
@@ -109,5 +113,18 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Enemigos")) 
+        {
+            TakeDamage(contactDamage);
+        }
+    }
+
+    public void TakeDamage(float damage) 
+    {
+        PlayerGameManager.playerHealth -= damage;
+        OnUpdateHealth.Invoke();
+    }
 }
 

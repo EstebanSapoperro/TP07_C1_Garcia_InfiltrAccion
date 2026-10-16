@@ -20,7 +20,7 @@ public class PickPoints : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
+        if (other.gameObject.layer == LayerMask.NameToLayer("Player") || other.gameObject.layer == LayerMask.NameToLayer("Slash"))
         {
             PlayerGameManager.playerAmmo += ammoDropped;
             Destroy(gameObject);
@@ -29,6 +29,7 @@ public class PickPoints : MonoBehaviour
 
     public void Pick()
     {
+        PlayerGameManager.playerAmmo += ammoDropped;
         Destroy(gameObject);
     }
 }

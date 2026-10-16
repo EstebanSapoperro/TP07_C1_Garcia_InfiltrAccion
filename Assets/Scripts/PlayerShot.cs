@@ -2,18 +2,23 @@ using UnityEngine;
 
 public class PlayerShot : MonoBehaviour
 {
+    [SerializeField] private PlayerSo data;
     [SerializeField] private Animator slashAnimator;
     [SerializeField] private BulletMovement bulletPrefab;
     [SerializeField] private Transform body;
     [SerializeField] private Transform shotPoint;
-    [SerializeField] private float shotCoolDown = 0.7f;
-    [SerializeField] private float slashCoolDown = 1.3f;
-    [SerializeField] private float slashDuration = 0.5f;
+
+    private float shotCoolDown;
+    private float slashCoolDown;
+    private float slashDuration;
     private float shotTimer;
     private float slashTimer;
 
     private void Update()
     {
+        shotCoolDown = data.shotCoolDown;
+        slashCoolDown = data.slashCoolDown;
+        slashDuration = data.slashDuration;
         shotTimer -= Time.deltaTime;
         slashTimer -= Time.deltaTime;
 
@@ -28,7 +33,6 @@ public class PlayerShot : MonoBehaviour
         if (Input.GetMouseButton(1) && slashTimer < 0)
         {
             slashTimer = slashCoolDown;
-            Debug.Log("se ataco con el cuchillo");
             slashAnimator.SetBool("Atack", true);
         }
         if (slashTimer < slashCoolDown - slashDuration) 
@@ -37,5 +41,6 @@ public class PlayerShot : MonoBehaviour
         }
 
     }
+
 
 }
