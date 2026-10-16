@@ -12,10 +12,11 @@ public class PlayerShot : MonoBehaviour
     {
         shotTimer -= Time.deltaTime;
 
-        if (Input.GetMouseButton(0) && shotTimer < 0)
+        if (Input.GetMouseButton(0) && shotTimer < 0 && PlayerGameManager.playerAmmo > 0)
         {
             BulletMovement bullet = Instantiate(bulletPrefab, shotPoint.position, Quaternion.identity);
             bullet.Shot(Mathf.Sign(body.transform.right.x));
+            PlayerGameManager.playerAmmo -= 1;
             shotTimer = shotCoolDown;
         }
     }

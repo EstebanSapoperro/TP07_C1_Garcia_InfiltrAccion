@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8858088103801307934}
-  - component: {fileID: 5680201271443091630}
+  - component: {fileID: 3766855400473057950}
   - component: {fileID: 1545100735792760173}
   - component: {fileID: 4369367296794073170}
   - component: {fileID: 979445864874027041}
@@ -37,7 +37,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5680201271443091630
+--- !u!114 &3766855400473057950
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -46,12 +46,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2424601257702820058}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc901625865c88f47ab74c0211f41d04, type: 3}
+  m_Script: {fileID: 11500000, guid: 34b72470a9c90f04f88015c81a8ed118, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Pickables
+  m_EditorClassIdentifier: Assembly-CSharp::PickPoints
   rb: {fileID: 4369367296794073170}
-  jumpx: 100
-  jump: 200
+  data: {fileID: 11400000, guid: 512e08307458be845a76f03954a0ab8c, type: 2}
 --- !u!212 &1545100735792760173
 SpriteRenderer:
   serializedVersion: 2

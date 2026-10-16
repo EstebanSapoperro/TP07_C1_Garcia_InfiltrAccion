@@ -14,7 +14,7 @@ public class EnemyMovement : MonoBehaviour
     {
         velocityX = data.velocityX;
         rb = GetComponent<Rigidbody2D>();
-        rb.linearVelocityX = Mathf.Abs(velocityX *2);
+        rb.linearVelocityX = velocityX * 2;
     }
 
 
@@ -23,12 +23,12 @@ public class EnemyMovement : MonoBehaviour
         Vector3 rotacion = body.transform.eulerAngles;
         if (Mathf.Approximately(rotacion.y, 180f))
         {
-            rb.linearVelocityX = Mathf.Abs(velocityX);
+            rb.linearVelocityX = velocityX;
             body.transform.rotation = Quaternion.Euler(0, 0, 0);
         }
         else
         {
-            rb.linearVelocityX = -Mathf.Abs(velocityX);
+            rb.linearVelocityX = -velocityX;
             body.transform.rotation = Quaternion.Euler(0, 180, 0);
         }
     }

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class EnemyBehaviour : MonoBehaviour
 {
-    [SerializeField] private Pickables pickables;
+    [SerializeField] private PickPoints pickables;
 
     private void OnDestroy()
     {
