@@ -11,8 +11,5 @@ public class EnemyBehaviour : MonoBehaviour
             Instantiate(pickables, transform.position, Quaternion.identity);
         }
     }
-    private void Update()
-    {
-        
-    }
+
 }

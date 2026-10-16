@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f89bcdc10402c346adc8717e362c886, type: 3}
   m_Name: PickData
   m_EditorClassIdentifier: Assembly-CSharp::PickablesDataSo
-  xImpulse: 120
+  xImpulse: 100
   jumpForce: 200
+  ammoDropped: 3
