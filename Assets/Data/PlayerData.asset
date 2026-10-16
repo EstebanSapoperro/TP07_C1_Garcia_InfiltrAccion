@@ -22,3 +22,9 @@ MonoBehaviour:
   originalGravityScale: 2.5
   jumpGravityScale: 1
   rayCastLong: 1.2
+  shotCoolDown: 0.3
+  slashCoolDown: 2
+  slashDuration: 0.5
+  slashDamage: 10
+  contactDamage: 20
+  invulneravilityTime: 2.5
