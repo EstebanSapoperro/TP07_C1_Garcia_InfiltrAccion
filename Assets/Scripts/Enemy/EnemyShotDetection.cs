@@ -14,7 +14,7 @@ public class EnemyShotDetection : MonoBehaviour
     private void OnTriggerStay2D(Collider2D other)
     {
         PlayerMovement player = other.GetComponent<PlayerMovement>();
-        if (player != null && canShot) 
+        if (player != null && canShot && !animatio.GetCurrentAnimatorStateInfo(0).IsName("Death")) 
         {
             animatio.Play("Shot");
         }
