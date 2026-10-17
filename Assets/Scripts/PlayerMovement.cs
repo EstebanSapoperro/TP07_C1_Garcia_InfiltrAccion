@@ -47,7 +47,6 @@ public class PlayerMovement : MonoBehaviour
             isPressingUp = true;
             isTappetUp = true;
             bufferTimer = bufferTime;
-            Debug.Log("buffer puede saltar");
         }
         else
         {

@@ -7,5 +7,6 @@ public class BulletDataSo : ScriptableObject
     [SerializeField] public float speed = 1f;
 
     [SerializeField] public float damage = 15;
+    [SerializeField] public bool enemyBullet = false;
 
 }

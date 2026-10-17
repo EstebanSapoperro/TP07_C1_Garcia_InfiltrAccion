@@ -7,10 +7,12 @@ public class BulletMovement : MonoBehaviour
     private float lifeTimer;
     private float speed;
     private float damage;
+    private bool enemyBullet;
     [SerializeField] private Rigidbody2D rb;
 
     private void Start()
     {
+        enemyBullet = data.enemyBullet;
         damage = data.damage;
         lifeTime = data.lifeTime;
         speed = data.speed;
@@ -33,16 +35,33 @@ public class BulletMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Solidos")) 
+        if (enemyBullet == false) 
         {
-            Destroy(gameObject);
+        
+            if (other.gameObject.layer == LayerMask.NameToLayer("Solidos")) 
+            {
+                Destroy(gameObject);
+            }
+            if (other.gameObject.layer == LayerMask.NameToLayer("Enemigos"))
+            {
+                HealthComponent enemyLife = other.GetComponentInChildren<HealthComponent>();
+                enemyLife.DoDamage(damage);
+                Destroy(gameObject);
+            }
         }
-        if (other.gameObject.layer == LayerMask.NameToLayer("Enemigos"))
+        if (enemyBullet) 
         {
-            HealthComponent enemyLife = other.GetComponentInChildren<HealthComponent>();
-            enemyLife.DoDamage(damage);
-            Destroy(gameObject);
-        }
+            if (other.gameObject.layer == LayerMask.NameToLayer("Solidos"))
+            {
+                Destroy(gameObject);
+            }
+            if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
+            {
+                PlayerHealth playerHealth = other.GetComponentInChildren<PlayerHealth>();
+                playerHealth.TakeDamage(damage);
+                Destroy(gameObject);
+            }
 
+        }
     }
 }
