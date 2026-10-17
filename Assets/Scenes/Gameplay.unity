@@ -6426,7 +6426,7 @@ GameObject:
   - component: {fileID: 1597328477}
   - component: {fileID: 1597328479}
   - component: {fileID: 1597328478}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: HitTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}

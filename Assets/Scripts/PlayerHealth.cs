@@ -4,7 +4,7 @@ using System;
 public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] PlayerSo data;
-    private float invulneravilityTime;
+    private float invulneravilityTime = 2;
     private float invulneravilityCounter = 0;
     private float contactDamage;
     public static event Action OnUpdateHealth;
@@ -23,13 +23,14 @@ public class PlayerHealth : MonoBehaviour
         if (collision.gameObject.layer == LayerMask.NameToLayer("Enemigos") && invulneravilityCounter < 0)
         {
             TakeDamage(contactDamage);
-            invulneravilityCounter = invulneravilityTime;
         }
     }
 
     public void TakeDamage(float damage)
     {
+        invulneravilityCounter = invulneravilityTime;
+        Debug.Log("Se recibio daño");
         PlayerGameManager.playerHealth -= damage;
-        OnUpdateHealth.Invoke();
+        OnUpdateHealth?.Invoke();
     }
 }
