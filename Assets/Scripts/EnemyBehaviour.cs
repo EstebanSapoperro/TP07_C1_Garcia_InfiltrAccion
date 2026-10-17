@@ -4,18 +4,19 @@ public class EnemyBehaviour : MonoBehaviour
 {
     [SerializeField] private PickPoints pickables;
 
-    private void OnDestroy()
-    {
 
-    }
-
-    public void DestroyIm() 
+    public void Drop() 
     {
         for (int i = 0; i < 4; i++)
         {
             Instantiate(pickables, transform.position, Quaternion.identity);
-            Destroy(gameObject);
+            
         }
+    }
+
+    public void DestroyIm() 
+    {
+        Destroy(gameObject);
     }
 
 }

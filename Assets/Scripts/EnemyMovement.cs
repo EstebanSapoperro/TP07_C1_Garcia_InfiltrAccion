@@ -4,15 +4,15 @@ using UnityEngine.UIElements;
 
 public class EnemyMovement : MonoBehaviour
 {
+    private float velocityX;
     private Rigidbody2D rb;
-    private float velocityX = 1f;
     [SerializeField] private Transform body;
     [SerializeField] private EnemyDataSo data;
     public bool inFloor = true;
 
     private void Start()
     {
-        velocityX = data.velocityX;
+        velocityX = data.orizontalVelocity;
         rb = GetComponent<Rigidbody2D>();
         rb.linearVelocityX = velocityX * 2;
     }
@@ -31,5 +31,10 @@ public class EnemyMovement : MonoBehaviour
             rb.linearVelocityX = -velocityX;
             body.transform.rotation = Quaternion.Euler(0, 180, 0);
         }
+    }
+
+    public void Stop() 
+    {
+        rb.linearVelocityX = 0;
     }
 }
