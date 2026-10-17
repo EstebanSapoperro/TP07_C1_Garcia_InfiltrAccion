@@ -843,7 +843,7 @@ Transform:
   m_GameObject: {fileID: 411154615}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.18, y: -2.78, z: 0}
+  m_LocalPosition: {x: 0.46, y: -2.88, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6093,6 +6093,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e654ebc0824b9942be2a2d5b1c9cb4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
+  animato: {fileID: 1460742158}
   rb: {fileID: 763556974}
   body: {fileID: 1242112205}
   data: {fileID: 11400000, guid: c06ad65fbb4080f40b9c7140e39fdc69, type: 2}
@@ -6553,6 +6554,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1460742156}
   - component: {fileID: 1460742157}
+  - component: {fileID: 1460742158}
   m_Layer: 7
   m_Name: Sprite
   m_TagString: Untagged
@@ -6634,6 +6636,28 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!95 &1460742158
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1460742155}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 95874a6a524a1e34c9cf831ecdf7a694, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1524410583
 PrefabInstance:
   m_ObjectHideFlags: 0
