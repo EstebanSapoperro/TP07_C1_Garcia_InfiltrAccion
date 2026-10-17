@@ -2,23 +2,23 @@ using UnityEngine;
 
 public class RayCast : MonoBehaviour
 {
-    [SerializeField] EnemyMovement enemy;
+    [SerializeField] private EnemyMovement enemy;
+    [SerializeField] private bool collitionChangeDirection;
 
-    void FixedUpdate()
-    {
-        
-    }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision != null) 
-        { 
-        }
-
-        if (collision == null)
+        if (collitionChangeDirection == false) 
         {
+            enemy.ChangeDirection();
         }
+    }
 
-        enemy.ChangeDirection();
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collitionChangeDirection) 
+        {
+            enemy.ChangeDirection();
+        }
     }
 }

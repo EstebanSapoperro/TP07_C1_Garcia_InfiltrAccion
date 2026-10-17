@@ -4,9 +4,8 @@ using UnityEngine.UI;
 public class HealthComponent : MonoBehaviour
 {
     private float maxHealth = 100;
-    [SerializeField] private ParticleSystem particles;
     [SerializeField] private EnemyDataSo data;
-    [SerializeField] private GameObject father;
+    [SerializeField] private EnemyBehaviour father;
     [SerializeField] private Image healthBar;
     private float health;
     private void Start()
@@ -20,9 +19,7 @@ public class HealthComponent : MonoBehaviour
         healthBar.fillAmount = health / maxHealth;
         if (health <= 0) 
         {
-            particles.Play();
-            Destroy(father, 0.5f);
-
+            father.DestroyIm();
         }
     }
 
