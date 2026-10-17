@@ -37,4 +37,19 @@ public class EnemyMovement : MonoBehaviour
     {
         rb.linearVelocityX = 0;
     }
+
+    public void Continue() 
+    {
+        Vector3 rotacion = body.transform.eulerAngles;
+        if (Mathf.Approximately(rotacion.y, 0f))
+        {
+            rb.linearVelocityX = velocityX;
+            body.transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
+        else
+        {
+            rb.linearVelocityX = -velocityX;
+            body.transform.rotation = Quaternion.Euler(0, 180, 0);
+        }
+    }
 }

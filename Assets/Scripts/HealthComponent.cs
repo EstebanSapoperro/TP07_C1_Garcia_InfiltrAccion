@@ -5,7 +5,7 @@ public class HealthComponent : MonoBehaviour
 {
     private float maxHealth = 100;
     [SerializeField] private EnemyDataSo data;
-    [SerializeField] private EnemyBehaviour father;
+    [SerializeField] private Animator animatio;
     [SerializeField] private Image healthBar;
     private float health;
     private void Start()
@@ -19,7 +19,7 @@ public class HealthComponent : MonoBehaviour
         healthBar.fillAmount = health / maxHealth;
         if (health <= 0) 
         {
-            father.DestroyIm();
+            animatio.Play("Death");
         }
     }
 

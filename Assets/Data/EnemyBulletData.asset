@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: EnemyBulletData
   m_EditorClassIdentifier: Assembly-CSharp::BulletDataSo
   lifeTime: 3
-  speed: 0.5
+  speed: 5
   damage: 10
   enemyBullet: 1

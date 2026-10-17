@@ -55,6 +55,10 @@ public class BulletMovement : MonoBehaviour
             {
                 Destroy(gameObject);
             }
+            if (other.gameObject.layer == LayerMask.NameToLayer("Slash"))
+            {
+                Destroy(gameObject);
+            }
             if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
             {
                 PlayerHealth playerHealth = other.GetComponentInChildren<PlayerHealth>();

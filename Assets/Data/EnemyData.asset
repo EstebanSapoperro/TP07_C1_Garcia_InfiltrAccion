@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d49ab1141f062746ab8f182b263c903, type: 3}
   m_Name: EnemyData
   m_EditorClassIdentifier: Assembly-CSharp::EnemyDataSo
-  velocityX: 1
+  orizontalVelocity: 1
   enemyHealth: 70
+  picksDropped: 4
