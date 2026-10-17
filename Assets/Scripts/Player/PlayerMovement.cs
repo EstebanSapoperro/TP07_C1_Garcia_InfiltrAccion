@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-
+    [SerializeField] private Animator animato;
     private float coyoteTimer = 0;
     private float bufferTimer = 0;
 
@@ -12,6 +12,8 @@ public class PlayerMovement : MonoBehaviour
     private bool inFloor = false;
     private bool goingRight = false;
     private bool goingLeft = false;
+    private bool walkAnimationPlayed = false;
+    private bool idleAnimationPlayed = true;
 
     private LayerMask floorLayer;
     private float coyoteTime;
@@ -47,6 +49,8 @@ public class PlayerMovement : MonoBehaviour
             isPressingUp = true;
             isTappetUp = true;
             bufferTimer = bufferTime;
+            animato.Play("Jump");
+            
         }
         else
         {
@@ -55,19 +59,51 @@ public class PlayerMovement : MonoBehaviour
             bufferTimer -= Time.deltaTime;
         }
 
-        if (Input.GetKey(KeyCode.D)) 
-        { 
+        if (Input.GetKey(KeyCode.D))
+        {
             goingRight = true;
-            body.transform.right = new Vector3(0,0,0);
+            body.transform.right = new Vector3(0, 0, 0);
+            if (walkAnimationPlayed == false && isPressingUp == false) 
+            {
+                animato.Play("PlayerWalk");
+                walkAnimationPlayed = true;
+            }
+            idleAnimationPlayed = false;
         }
-        else goingRight = false;
+        else 
+        {
+            //if (idleAnimationPlayed == false && isPressingUp == false)
+            //{
+            //    animato.Play("Idle");
+            //    idleAnimationPlayed = true;
+            //}
+            animato.SetBool("IsWalk", false);
+            goingRight = false;
+            walkAnimationPlayed = false;
+        }
 
         if (Input.GetKey(KeyCode.A)) 
-        { 
+        {
             goingLeft = true;
             body.transform.right = new Vector3(-180, 0, 0);
+            if (walkAnimationPlayed == false && isPressingUp == false)
+            {
+                animato.Play("PlayerWalk");
+                walkAnimationPlayed = true;
+            }
+            idleAnimationPlayed = false;
         }
-        else goingLeft = false;
+        else
+        {
+            //if (idleAnimationPlayed == false && isPressingUp == false)
+            //{
+            //    animato.Play("Idle");
+            //    idleAnimationPlayed = true;
+            //}
+            animato.SetBool("IsWalk", false);
+            walkAnimationPlayed = false;
+            goingLeft = false;
+        }
 
 
         RaycastHit2D hit = Physics2D.Raycast(transform.localPosition, Vector2.down, rayCastLong, floorLayer);
