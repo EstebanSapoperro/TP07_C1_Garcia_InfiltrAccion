@@ -44,6 +44,9 @@ TagManager:
   - name: background
     uniqueID: 4294748993
     locked: 0
+  - name: terrain
+    uniqueID: 845790111
+    locked: 0
   - name: player
     uniqueID: 1601103029
     locked: 0
@@ -52,9 +55,6 @@ TagManager:
     locked: 0
   - name: bullets
     uniqueID: 2688197977
-    locked: 0
-  - name: terrain
-    uniqueID: 845790111
     locked: 0
   m_RenderingLayers:
   - Default
