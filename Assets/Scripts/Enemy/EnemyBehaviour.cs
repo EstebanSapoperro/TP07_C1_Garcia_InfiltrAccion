@@ -4,6 +4,8 @@ public class EnemyBehaviour : MonoBehaviour
 {
     [SerializeField] private EnemyDataSo data;
     [SerializeField] private PickPoints pickables;
+    [SerializeField] private AudioSource deadEffect;
+    [SerializeField] private AudioClip[] deadClipEffect;
     private int picksDropped;
 
     private void Start()
@@ -13,6 +15,7 @@ public class EnemyBehaviour : MonoBehaviour
 
     public void Drop() 
     {
+        deadEffect.PlayOneShot(deadClipEffect[Random.Range(0,3)]);
         for (int i = 0; i < picksDropped; i++)
         {
             Instantiate(pickables, transform.position, Quaternion.identity);

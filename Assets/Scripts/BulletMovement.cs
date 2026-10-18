@@ -1,8 +1,12 @@
 using UnityEngine;
+using System;
 
 public class BulletMovement : MonoBehaviour
 {
+    static public event Action OnMissShoot;
     [SerializeField] private BulletDataSo data;
+    [SerializeField] private AudioSource hitEffect;
+    [SerializeField] private AudioClip missEffect;
     private float lifeTime;
     private float lifeTimer;
     private float speed;
@@ -40,10 +44,13 @@ public class BulletMovement : MonoBehaviour
         
             if (other.gameObject.layer == LayerMask.NameToLayer("Solidos")) 
             {
+                OnMissShoot?.Invoke();
                 Destroy(gameObject);
             }
             if (other.gameObject.layer == LayerMask.NameToLayer("Enemigos"))
             {
+                hitEffect.pitch = UnityEngine.Random.Range(0.8f, 1.2f);
+                hitEffect.Play();
                 HealthComponent enemyLife = other.GetComponentInChildren<HealthComponent>();
                 enemyLife.DoDamage(damage);
                 Destroy(gameObject);
