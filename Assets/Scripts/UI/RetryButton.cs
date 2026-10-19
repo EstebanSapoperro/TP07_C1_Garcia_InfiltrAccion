@@ -18,7 +18,9 @@ public class RetryButton : MonoBehaviour
 
     private void onClick() 
     {
+        PlayerGameManager.playerHealth = 100;
+        PlayerGameManager.playerAmmo = 10;
         Time.timeScale = 1.0f;
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Gameplay");
     }
 }

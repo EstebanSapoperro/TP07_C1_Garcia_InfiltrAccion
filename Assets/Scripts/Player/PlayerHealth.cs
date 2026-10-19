@@ -10,7 +10,9 @@ public class PlayerHealth : MonoBehaviour
     private float invulneravilityTime = 2;
     private float invulneravilityCounter = 0;
     private float contactDamage;
+    private bool isDeath = false;
     public static event Action OnUpdateHealth;
+    public static event Action OnDeathHealth;
 
     private void Start()
     {
@@ -20,9 +22,11 @@ public class PlayerHealth : MonoBehaviour
     private void Update()
     {
         invulneravilityCounter -= Time.deltaTime;
-        if (playerPosition.localPosition.y < limitsPosition.localPosition.y) 
+        if (playerPosition.localPosition.y < limitsPosition.localPosition.y && isDeath == false) 
         {
             Debug.Log("Se murio por que se salio del mapa");
+            isDeath = true;
+            OnDeathHealth?.Invoke();
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -38,6 +42,14 @@ public class PlayerHealth : MonoBehaviour
         invulneravilityCounter = invulneravilityTime;
         Debug.Log("Se recibio daño");
         PlayerGameManager.playerHealth -= damage;
-        OnUpdateHealth?.Invoke();
+        if (PlayerGameManager.playerHealth <= 0)
+        {
+            OnDeathHealth?.Invoke();
+        }
+        else 
+        {
+            OnUpdateHealth?.Invoke();
+        }
+       
     }
 }
