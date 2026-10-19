@@ -2,15 +2,21 @@ using UnityEngine;
 
 public class AudioManagerSFX : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] private AudioSource sfxAudio;
+    [SerializeField] private AudioClip missClipEffect;
+    private void Start()
     {
-        
+        BulletMovement.OnMissShoot += PlayMissSound;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnDestroy()
     {
-        
+        BulletMovement.OnMissShoot -= PlayMissSound;
     }
+
+    private void PlayMissSound() 
+    {
+        sfxAudio.PlayOneShot(missClipEffect);
+    }
+
 }

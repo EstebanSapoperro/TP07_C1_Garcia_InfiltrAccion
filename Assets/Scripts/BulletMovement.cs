@@ -50,7 +50,6 @@ public class BulletMovement : MonoBehaviour
             if (other.gameObject.layer == LayerMask.NameToLayer("Enemigos"))
             {
                 hitEffect.pitch = UnityEngine.Random.Range(0.8f, 1.2f);
-                hitEffect.Play();
                 HealthComponent enemyLife = other.GetComponentInChildren<HealthComponent>();
                 enemyLife.DoDamage(damage);
                 Destroy(gameObject);
@@ -74,5 +73,11 @@ public class BulletMovement : MonoBehaviour
             }
 
         }
+    }
+
+    private void PlayHitSound() 
+    {
+
+
     }
 }
