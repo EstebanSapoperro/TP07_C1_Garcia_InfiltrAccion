@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class EnemyBehaviour : MonoBehaviour
 {
+    [SerializeField] private ParticleSystem particle;
     [SerializeField] private EnemyDataSo data;
     [SerializeField] private PickPoints pickables;
     [SerializeField] private AudioSource deadEffect;
@@ -21,6 +22,7 @@ public class EnemyBehaviour : MonoBehaviour
         {
             Instantiate(pickables, transform.position, Quaternion.identity);
         }
+        particle.Play();
     }
 
     public void DestroyIm() 

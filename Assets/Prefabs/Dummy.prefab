@@ -667,6 +667,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d79b2b57e9cf1744acb88ed536816b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyBehaviour
+  particle: {fileID: 385867809605036861}
   data: {fileID: 11400000, guid: f367b310db9015b42aa83d17736a1a07, type: 2}
   pickables: {fileID: 3766855400473057950, guid: 47e5c3b102000aa4dbc85e34304a30cd, type: 3}
   deadEffect: {fileID: 8089562378616396933}
@@ -1504,7 +1505,7 @@ ParticleSystem:
     m_UseMeshMaterialIndex: 0
     m_UseMeshColors: 1
     alignToDirection: 0
-    m_Texture: {fileID: 0}
+    m_Texture: {fileID: 2800000, guid: 8b98fdb5252f2e84abbce33fe329a23a, type: 3}
     m_TextureClipChannel: 3
     m_TextureClipThreshold: 0
     m_TextureUVChannel: 0
@@ -5546,7 +5547,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 14481bb738b8a6c4a8ff780a00513eb1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

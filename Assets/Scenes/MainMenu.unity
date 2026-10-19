@@ -348,6 +348,19 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainMenuCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 5517498197794006019, guid: 06cc1deda7a3b3a48865275a2260d30f, type: 3}
+      propertyPath: m_text
+      value: 'Credits:
+
+        Game Design: Martin EstebanGarcia
+
+        Game Sprites:https://bakudas.itch.io/generic-run-n-gun
+
+        UI
+        Sprites:https://freegameui.net
+
+        Sound Effects:https://elevenlabs.io/app/sound-effects'
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
