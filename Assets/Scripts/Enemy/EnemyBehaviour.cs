@@ -15,6 +15,7 @@ public class EnemyBehaviour : MonoBehaviour
 
     public void Drop() 
     {
+        gameObject.layer = LayerMask.NameToLayer("Default");
         deadEffect.PlayOneShot(deadClipEffect[Random.Range(0,3)]);
         for (int i = 0; i < picksDropped; i++)
         {

@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PickablesDataSo
   xImpulse: 100
   jumpForce: 200
-  ammoDropped: 3
+  ammoDropped: 2
