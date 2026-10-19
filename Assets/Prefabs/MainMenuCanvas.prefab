@@ -4011,10 +4011,16 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Creditos:\nDise\xF1ado por: Martin Esteban Garcia\nSprites de la UI: https://kenney.nl\nSprites
-    del personage: https://rgsdev.itch.io/character-prototype-animated-cc0\nmusica
-    y sonidos sacados de: https://pixabay.com\nImagenes de corazon y escudo sacados
-    de: https://freegameui.net"
+  m_text: 'Credits:
+
+    Game Design: Martin EstebanGarcia
+
+    Game Sprites:https://bakudas.itch.io/generic-run-n-gun
+
+    UI
+    Sprites:https://freegameui.net
+
+    Sound Effects:https://elevenlabs.io/app/sound-effects'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

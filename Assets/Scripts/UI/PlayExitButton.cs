@@ -26,13 +26,16 @@ public class PlayExitButton : MonoBehaviour
         if (mainMenuButton)
         {
             Time.timeScale = 0.0f;
+            PlayerGameManager.playerHealth = PlayerGameManager.playerMaxHealth;
+            PlayerGameManager.playerAmmo = PlayerGameManager.playerInitialAmmo;
+            GameManager.isWiningPanelOn = false;
             SceneManager.LoadScene("MainMenu");
         }
 
         if (playButton)
         {
             Time.timeScale = 1.0f;
-            SceneManager.LoadScene("SampleScene");
+            SceneManager.LoadScene("Gameplay");
         }
 
         if (exitButton)

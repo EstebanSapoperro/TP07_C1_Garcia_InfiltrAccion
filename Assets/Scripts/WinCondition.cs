@@ -7,6 +7,7 @@ public class WinCondition : MonoBehaviour
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
+            GameManager.isWiningPanelOn = true;
             OnWining?.Invoke();
         }
     }
