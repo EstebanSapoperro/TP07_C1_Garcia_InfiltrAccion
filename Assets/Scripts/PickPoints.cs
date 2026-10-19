@@ -2,11 +2,13 @@ using UnityEngine;
 
 public class PickPoints : MonoBehaviour
 {
+    [SerializeField] private AudioSource Audio;
+    [SerializeField] private AudioClip SFX;
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private PickablesDataSo data;
     private float xImpulse;
     private float jumpForce;
-
+    
     private int ammoDropped;
 
     void Start()
@@ -23,6 +25,7 @@ public class PickPoints : MonoBehaviour
         if (other.gameObject.layer == LayerMask.NameToLayer("Player") || other.gameObject.layer == LayerMask.NameToLayer("Slash"))
         {
             PlayerGameManager.playerAmmo += ammoDropped;
+            AudioSource.PlayClipAtPoint(SFX, transform.position);
             Destroy(gameObject);
         }
     }

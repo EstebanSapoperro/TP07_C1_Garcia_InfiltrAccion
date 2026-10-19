@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [SerializeField] private AudioSource jumpSFX;
     [SerializeField] private Animator animato;
     private float coyoteTimer = 0;
     private float bufferTimer = 0;
@@ -72,11 +73,6 @@ public class PlayerMovement : MonoBehaviour
         }
         else 
         {
-            //if (idleAnimationPlayed == false && isPressingUp == false)
-            //{
-            //    animato.Play("Idle");
-            //    idleAnimationPlayed = true;
-            //}
             animato.SetBool("IsWalk", false);
             goingRight = false;
             walkAnimationPlayed = false;
@@ -95,11 +91,6 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            //if (idleAnimationPlayed == false && isPressingUp == false)
-            //{
-            //    animato.Play("Idle");
-            //    idleAnimationPlayed = true;
-            //}
             animato.SetBool("IsWalk", false);
             walkAnimationPlayed = false;
             goingLeft = false;
@@ -134,6 +125,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (bufferTimer > 0 && coyoteTimer > 0) 
         {
+            jumpSFX.Play();
             rb.linearVelocityY = jumpForce;
             bufferTimer = 0;
             coyoteTimer = 0;

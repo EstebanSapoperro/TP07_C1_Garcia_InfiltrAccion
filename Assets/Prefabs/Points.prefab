@@ -49,6 +49,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34b72470a9c90f04f88015c81a8ed118, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PickPoints
+  Audio: {fileID: 0}
+  SFX: {fileID: 8300000, guid: 38807068c618dfb4fa93787cf21e5d1c, type: 3}
   rb: {fileID: 4369367296794073170}
   data: {fileID: 11400000, guid: 512e08307458be845a76f03954a0ab8c, type: 2}
 --- !u!212 &1545100735792760173
@@ -97,7 +99,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -707618961
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
@@ -219,7 +221,7 @@ TrailRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -707618961
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: -1
   m_MaskInteraction: 0
   m_Time: 1
